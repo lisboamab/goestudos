@@ -25,6 +25,23 @@ func main() {
 	fmt.Println(reflect.TypeOf(slice))
 	fmt.Println(reflect.TypeOf(array3))
 
-	slice = append(slice, 18)
+	slice = append(slice, 18) 
 	fmt.Println(slice)
+
+	slice2 := array2[1:3] //o primeiro indice é inclusivo e o segundo indice é exclusivo
+
+	array2[1] = "posição alterada"
+	fmt.Println(slice2)
+
+	//Arrays Internos
+	slice3 := make([]float32, 10, 11) //a função make cria um array com 15 posições nesse caso, e pega as 10 primeiras posições
+	slice3 = append(slice3, 5)
+	slice3 = append(slice3, 6)
+	
+	
+	fmt.Println(slice3)
+	fmt.Println(len(slice3))
+	fmt.Println(cap(slice3))
+
+
 }
