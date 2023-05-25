@@ -10,5 +10,6 @@ func somaESubtrai(n1, n2 int) (soma int, sub int) {
 
 func main() {
 	fmt.Println(somaESubtrai(10, 20))
-
+	soma, subtracao := somaESubtrai(10, 20)
+	fmt.Println(soma, subtracao)
 }
