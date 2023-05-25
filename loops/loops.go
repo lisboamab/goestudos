@@ -24,9 +24,14 @@ func main() {
 	}
 
 	nomes := [3]string{"João", "Davi", "Lucas"}
+	nomes2 := []string{"Zé", "João", "Nestor"}
 	
 	//  posição, elemento
 	for indice, nome := range nomes {
 		fmt.Printf("%v: %v\n", indice, nome)
+	}
+
+	for i, nome := range nomes2{
+		fmt.Printf("%v:\t%v\n", i, nome)
 	}
 }
