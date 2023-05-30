@@ -9,6 +9,7 @@ type forma interface {
 	area() float64
 }
 
+//caso seja passado uma interface vazia, essa função poderá ser passada com qualquer interface
 func escreverArea(self forma) {
 	fmt.Printf("A area da forma é %0.2f\n", self.area())
 }
