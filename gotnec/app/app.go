@@ -33,6 +33,12 @@ func Gerar() *cli.App {
 			Flags:  flags,
 			Action: buscaServidores,
 		},
+		{
+			Name:   "cname",
+			Usage:  "Busca o DNS",
+			Flags:  flags,
+			Action: buscaCNAME,
+		},
 	}
 
 	return app
@@ -61,5 +67,18 @@ func buscaServidores(c *cli.Context) {
 
 	for _, server := range servers {
 		fmt.Println(server.Host)
+	}
+}
+
+func buscaCNAME(c *cli.Context) {
+	host := c.String("host")
+
+	cnames, erro := net.LookupCNAME(host)
+	if erro != nil {
+		log.Fatal(erro)
+	}
+
+	for _, cname := range cnames {
+		fmt.Println(cname)
 	}
 }
